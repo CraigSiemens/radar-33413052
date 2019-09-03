@@ -22,7 +22,11 @@ class ExpectedViewController: UITableViewController {
     ]
     
     override init(style: UITableView.Style) {
-        super.init(style: .grouped)
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .grouped)
+        }
         
         title = "Expected"
     }
