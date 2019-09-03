@@ -15,7 +15,7 @@ class ActualViewController: UITableViewController {
         Section(title: nil)
     ]
     
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: .grouped)
         
         title = "Actual"
@@ -33,11 +33,11 @@ class ActualViewController: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        guard sections.count < 3 else { return }
         
         let index = 0
         
         sections.insert(Section(title: "Header"), at: index)
-        
         tableView.reloadData()
         
         // Also happens when animating in the new section

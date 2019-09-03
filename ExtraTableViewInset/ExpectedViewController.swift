@@ -21,7 +21,7 @@ class ExpectedViewController: UITableViewController {
         Section(title: nil)
     ]
     
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: .grouped)
         
         title = "Expected"
